@@ -27,18 +27,69 @@ Therefore, D flip-flop always Hold the information, which is available on data i
 Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters.
 
 **Procedure**
+```
+1.Type the program in Quartus software.
 
-/* write all the steps invloved */
+2.Compile and run the program.
 
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
+
+
+```
 **PROGRAM**
+```
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by:Iniyasri.s
+RegisterNumber:21223230081
+module JKFLIPFLOPUSINGIFELSE(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+ //Write logic for JK flipflop using if else statement for four conditions
+
+
+begin
+               if (j == 0 && k == 0)
+                    begin
+                    q <= q;
+                    qb <= qb;
+                    end 
+		else if (j != k)
+                    begin
+                    q <= j;
+                    qb <= k;
+                    end
+               else if (j == 1 && k == 1) 
+                    begin 
+                    q <= ~q; 
+                    qb <= ~qb; 
+                    end 
+            end
+end  
+endmodule
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
-
+![image](https://github.com/iniyasri4464/D-FLIPDLOP-NEGEDGE/assets/152419072/d237478a-0d5e-419f-a4b6-6fd1bdddf373)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/iniyasri4464/D-FLIPDLOP-NEGEDGE/assets/152419072/454ef695-8abc-457b-b32b-a412ddb05299)
 
 
 **RESULTS**
+The observation of the simulation results and confirm the successful execution of the program.
